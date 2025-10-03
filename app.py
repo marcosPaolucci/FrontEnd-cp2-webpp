@@ -82,7 +82,7 @@ if df is not None:
             with st.container(border=True):
                 filme = df.loc[idx]
                 st.write(f"**Sugestão #{i+1}**")
-                st.write(f"_{filme['synopsis'][:250]}..._")
+                st.write(f"_{filme['synopsis']}_")
                 if st.button("Escolher este", key=f"btn_{idx}"):
                     st.session_state['escolha_feita'] = idx
                     st.rerun() # Re-executa para mostrar as recomendações imediatamente
