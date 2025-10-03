@@ -39,7 +39,7 @@ def run_automl_clustering():
 
     df['sinopse_limpa'] = df['synopsis'].apply(limpar_texto)
     
-    vectorizer = TfidfVectorizer(min_df=0.03, max_df=0.8, max_features=500)
+    vectorizer = TfidfVectorizer(min_df=0.03, max_df=0.3, max_features=500)
     matriz_tfidf = vectorizer.fit_transform(df['sinopse_limpa'])
     tfidf_df = pd.DataFrame(matriz_tfidf.toarray(), columns=vectorizer.get_feature_names_out())
 
